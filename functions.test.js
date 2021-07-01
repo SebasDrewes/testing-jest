@@ -1,5 +1,5 @@
 /* eslint-disable prefer-destructuring */
-const myModule = require('./sum');
+const myModule = require('./functions');
 
 const capitalize = myModule.capitalize;
 const reverseString = myModule.reverseString;
