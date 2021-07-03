@@ -36,7 +36,6 @@ function caesarCipher(string, key) {
         if (alphabet[j + key] === undefined) {
           const negativeIndex = (j + key) % alphabet.length;
           newString += keepCase(string[i], alphabet[negativeIndex]);
-          break;
         } else {
           newString += keepCase(string[i], alphabet[j + key]);
         }
