@@ -24,5 +24,5 @@ test('ceasarCipherMedium', () => {
   expect(caesarCipher('Z.o.o', 5)).toBe('E.t.t');
 });
 test('ceasarCipherCaseExtreme', () => {
-  expect(caesarCipher('Z.e.B.a.S.t.i.A.n', 9)).toBe('I.n.K.j.B.c.r.J.w');
+  expect(caesarCipher('Z.e.B.a.S.t.i.A.n>?,', 9)).toBe('I.n.K.j.B.c.r.J.w>?,');
 });

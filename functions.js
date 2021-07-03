@@ -25,10 +25,10 @@ function caesarCipher(string, key) {
     }
     return newValue.toUpperCase();
   }
-  // logica para sumar puntos
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] === '.') {
-      newString += '.';
+    // logica para no modificar valores no alfabeticos
+    if (alphabet.includes(string[i].toLowerCase()) === false) {
+      newString += string[i];
     }
     for (let j = 0; j < alphabet.length; j += 1) {
       if (string[i].toLowerCase() === alphabet[j]) {
