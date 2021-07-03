@@ -44,10 +44,32 @@ function caesarCipher(string, key) {
   }
   return newString;
 }
-
+function analyze(array) {
+  const { length } = array;
+  let sumOfArray = 0;
+  let max = array[0];
+  let min = array[0];
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i] < min) {
+      min = array[i];
+    }
+    if (array[i] > max) {
+      max = array[i];
+    }
+    sumOfArray += array[i];
+  }
+  const average = sumOfArray / length;
+  return {
+    average,
+    min,
+    max,
+    length,
+  };
+}
 module.exports = {
   capitalize,
   reverseString,
   calculator,
   caesarCipher,
+  analyze,
 };
