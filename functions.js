@@ -18,18 +18,28 @@ calculator.multiplicacion = (a, b) => a * b;
 function caesarCipher(string, key) {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   let newString = '';
+  // logica para sumar .
   for (let i = 0; i < string.length; i += 1) {
     if (string[i] === '.') {
       newString += '.';
     }
     for (let j = 0; j < alphabet.length; j += 1) {
-      if (string[i] === alphabet[j]) {
+      if (string[i].toLowerCase() === alphabet[j]) {
+        // logica para seleccionar index negativo
         if (alphabet[j + key] === undefined) {
           const negativeIndex = (j + key) % alphabet.length;
-          newString += alphabet[negativeIndex];
+          // logica para respetar Case original
+          if (string[i] === string[i].toLowerCase()) {
+            newString += alphabet[negativeIndex].toLowerCase();
+          } else if (string[i] === string[i].toUpperCase()) {
+            newString += alphabet[negativeIndex].toUpperCase();
+          }
           break;
-        } else {
-          newString += alphabet[j + key];
+          // logica para respetar Case original
+        } if (string[i] === string[i].toLowerCase()) {
+          newString += alphabet[j + key].toLowerCase();
+        } else if (string[i] === string[i].toUpperCase()) {
+          newString += alphabet[j + key].toUpperCase();
         }
       }
     }
